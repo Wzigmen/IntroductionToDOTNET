@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
+using System.Diagnostics.Eventing.Reader;
 
 namespace DataTypes
 {
@@ -11,6 +13,21 @@ namespace DataTypes
     {
         static readonly string delimiter1 = "\n------------------------------------------\n";
         static readonly string delimiter2 = "\n==========================================\n";
+        public static int Clamp(int value, int min, int max)
+        {
+            if (value < min)
+            {
+                return min;
+            }
+            else if (value > max)
+            {
+                return max;
+            }
+            else
+            {
+                return value;
+            }
+        } 
         static void Main(string[] args)
         {
             #region Short
@@ -54,15 +71,76 @@ namespace DataTypes
             //C-like notation: (type)value;
             #endregion
             #region Exp
-            int a = int.MaxValue;
-            uint b = uint.MaxValue;
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-            long c = long.MaxValue;
-            Console.WriteLine(b + c);
-            Console.WriteLine((b + c).GetType()); 
+            //int a = int.MaxValue;
+            //uint b = uint.MaxValue;
+            //Console.WriteLine(a);
+            //Console.WriteLine(b);
+            //long c = long.MaxValue;
+            //Console.WriteLine(b + c);
+            //Console.WriteLine((b + c).GetType());
             #endregion
+            #region Factorial
+            //try
+            //{
+            //    int a = int.Parse(Console.ReadLine());
+            //    BigInteger f = 1;
+            //    for (int i = 1; i <= a; i++)
+            //    {
+            //        f *= i;
+            //        Console.WriteLine($"{i}! = {f}");
+            //    }
 
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex);
+            //}
+            #endregion
+            #region ConsoleCursor
+            //int cursorLeft = 0;
+            //int cursorTop = 0;
+
+            //while (true)
+            //{
+            //    Console.SetCursorPosition(cursorLeft, cursorTop);
+            //    ConsoleKeyInfo key = Console.ReadKey(true);
+
+            //    switch (key.Key)
+            //    {
+            //        case ConsoleKey.UpArrow:
+            //            cursorTop--;
+            //            break;
+            //        case ConsoleKey.DownArrow:
+            //            cursorTop++;
+            //            break;
+            //        case ConsoleKey.LeftArrow:
+            //            cursorLeft--;
+            //            break;
+            //        case ConsoleKey.RightArrow:
+            //            cursorLeft++;
+            //            break;
+            //        case ConsoleKey.Escape:
+            //            return;
+            //    }
+
+            //    cursorLeft = Clamp(cursorLeft, 0, Console.WindowWidth - 1);
+            //    cursorTop = Clamp(cursorTop, 0, Console.WindowHeight - 1);
+
+            //}
+            #endregion
+            #region Ромб
+            //int n = 5;
+            //for (int i = 0; i < n * 2; i++)
+            //{
+            //    for (int j = 0; j < n * 2; j++)
+            //    {
+            //        if (i == j - n || j == i - n) Console.Write("\\");
+            //        else if (i == n - 1 - j || i - n == n * 2 - 1 - j) Console.Write("/");
+            //        else Console.Write(" ");
+            //    }
+            //    Console.WriteLine();
+            //} 
+            #endregion
 
 
 
