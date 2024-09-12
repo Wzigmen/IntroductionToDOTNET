@@ -12,141 +12,95 @@ namespace Домашняя_работа_СS
 {
     internal class Program
     {
-        static int l = 0;
         static void Main(string[] args)
         {
-            print("квадрат", '*', 5);
-            print("треугольник 1", '*', 5);
-            print("треугольник 2", '*', 5);
-            print("треугольник 3", '*', 5);
-            print("треугольник 4", '*', 5);
-            print("ромб", '*', 5);
-            print("шахматная доска", '*', 5);
-            print("шахматная доска красивая", '*', 8);
-            Console.WriteLine("Введите число: ");
-            int chislo = Convert.ToInt32(Console.ReadLine());
-            print("шахматная доска на заданное количество", '*', chislo);
+            #region Cursor
+            //int cursorLeft = 0;
+            //int cursorTop = 0;
+
+            //while (true)
+            //{
+            //    Console.SetCursorPosition(cursorLeft, cursorTop);
+            //    ConsoleKeyInfo key = Console.ReadKey(true);
+
+            //    switch (key.Key)
+            //    {
+            //        case ConsoleKey.UpArrow:
+            //            cursorTop--;
+            //            break;
+            //        case ConsoleKey.DownArrow:
+            //            cursorTop++;
+            //            break;
+            //        case ConsoleKey.LeftArrow:
+            //            cursorLeft--;
+            //            break;
+            //        case ConsoleKey.RightArrow:
+            //            cursorLeft++;
+            //            break;
+            //        case ConsoleKey.Escape:
+            //            return;
+            //    }
+            //    if (key.Key == ConsoleKey.Enter) break;
+            //    cursorLeft = Clamp(cursorLeft, 0, Console.WindowWidth - 1);
+            //    cursorTop = Clamp(cursorTop, 0, Console.WindowHeight - 1);
+
+            //} 
+            #endregion
+            #region Kalkulator
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("Введите первое число:");
+            //        double num1 = double.Parse(Console.ReadLine());
+
+            //        Console.WriteLine("Введите операцию (+, -, *, /):");
+            //        string operation = Console.ReadLine();
+
+            //        Console.WriteLine("Введите второе число:");
+            //        double num2 = double.Parse(Console.ReadLine());
+
+            //        double result = Calculate(num1, operation, num2);
+            //        Console.WriteLine($"Результат: {result}");
+
+            //        Console.WriteLine("Хотите продолжить? (да/нет)");
+            //        string continueChoice = Console.ReadLine();
+
+            //        if (continueChoice.ToLower() != "да")
+            //        {
+            //            break;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("Ошибка: " + ex.Message);
+            //    }
+            //} 
+            #endregion
+
+
         }
-        static void print(string shap, char star, int size)
+
+        static double Calculate(double num1, string operation, double num2)
         {
-            Console.WriteLine();
-            Console.WriteLine($"{l})");
-            if (shap == "ромб")
+            switch (operation)
             {
-                for (int i = 0; i < 2 * size; i++)
-                {
-                    int row = i < size ? i : 2 * size - 1 - i; //не сам додумался
-
-                    for (int j = 0; j < size - row - 1; j++)
-                        Console.Write(" ");
-
-                    if (i < size)
-                        Console.Write("/");
-                    else
-                        Console.Write("\\");
-
-                    for (int j = 0; j < row * 2; j++)
-                        Console.Write(" ");
-
-                    if (i < size)
-                        Console.Write("\\");
-                    else
-                        Console.Write("/");
-
-                    Console.WriteLine();
-                }
-                l++;
-                return;
+                case "+":
+                    return num1 + num2;
+                case "-":
+                    return num1 - num2;
+                case "*":
+                    return num1 * num2;
+                case "/":
+                    if (num2 == 0)
+                    {
+                        throw new DivideByZeroException("Деление на ноль!");
+                    }
+                    return num1 / num2;
+                default:
+                    throw new ArgumentException("Неверная операция!");
             }
-            if (shap == "шахматная доска красивая")
-            {
-                for (int i = 0; i < size; i++)
-                {
-                    for (int j = 0; j < size; j++)
-                    {
-                        if ((i + j) % 2 == 0)
-                            Console.Write(new string(' ', 2));
-                        else
-                            Console.Write(new string('█', 2));
-                    }
-                    Console.WriteLine();
-                }
-                l++;
-                return;
-            }
-            if (shap == "шахматная доска на заданное количество")
-            {
-                for (int i = 0; i < size; i++)
-                {
-                    for (int j = 0; j < size; j++)
-                    {
-                        if ((i + j) % 2 == 0)
-                        {
-                            for (int k = 0; k < size; k++)
-                            {
-                                if ((k + i) % 2 == 0)
-                                {
-                                    Console.Write(new string(' ', size));
-                                }
-                                else
-                                {
-                                    Console.Write(new string(star, size));
-                                }
-                            }
-                            Console.WriteLine();
-                        }
-                        else
-                        {
-                            for (int k = 0; k < size; k++)
-                            {
-                                if ((k + i) % 2 == 0)
-                                {
-                                    Console.Write(new string(' ', size));
-                                }
-                                else
-                                {
-                                    Console.Write(new string(star, size));
-                                }
-                            }
-                            Console.WriteLine();
-                        }
-                    }
-                }
-                l++;
-                return;
-            }
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    if (shap == "квадрат")
-                        Console.Write(star);
-                    if (shap == "треугольник 1")
-                        if (i >= j) Console.Write(star);
-                    if (shap == "треугольник 2")
-                        if (i <= j) Console.Write(star);
-                    if (shap == "треугольник 3")
-                    {
-                        if (i <= j) Console.Write(star);
-                        else Console.Write(" ");
-                    }
-                    if (shap == "треугольник 4")
-                    {
-                        if (i + 1 >= size - j) Console.Write(star);
-                        else Console.Write(" ");
-                    }
-                    if (shap == "шахматная доска")
-                    {
-                        if ((i + j) % 2 == 0)
-                            Console.Write("+");
-                        else
-                            Console.Write("-");
-                    }
-
-                }
-                Console.WriteLine();
-            }
-            l++;
         }
     }
+    
 }

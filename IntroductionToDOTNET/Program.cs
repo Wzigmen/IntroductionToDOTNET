@@ -30,21 +30,73 @@ namespace IntroductionToDOTNET
             //IndexOutOfRangeException indexOutOfRangeException;
 #endif
 
-            Console.WriteLine("Введите имя: ");
-            string first_name = Console.ReadLine();
+            #region Short
+            //Console.Write($"Переменая типа 'short' занимает {sizeof(short)} байта");
+            //Console.WriteLine($" и принимает значения в диапозоне: {short.MinValue} ... {short.MaxValue}");
+            //Console.WriteLine(delimiter1);
+            //Console.Write($"Переменая типа 'ushort' занимает {sizeof(ushort)} байта");
+            //Console.WriteLine($"Диапозон принимаемых значений 'ushort': {ushort.MinValue} ... {ushort.MaxValue}");
+            #endregion
+            #region Int
+            //Console.WriteLine(delimiter2);
 
-            Console.WriteLine("Введите фамилию: ");
-            string last_name = Console.ReadLine();
+            //Console.Write($"Переменая типа 'int' занимает {sizeof(int)} байта");
+            //Console.WriteLine($" и принимает значения в диапозоне: {int.MinValue} ... {int.MaxValue}");
+            //Console.WriteLine(delimiter1);
+            //Console.Write($"Переменая типа 'Int16' занимает {sizeof(Int16)} байта");
+            //Console.WriteLine($"Диапозон принимаемых значений 'Int16': {Int16.MinValue} ... {Int16.MaxValue}");
 
-            Console.WriteLine("Введите возраст: ");
-            int age = Convert.ToInt32(Console.ReadLine());
-            // Конкатенация
-            Console.WriteLine(last_name + " " + first_name + " " + age);
-            // Форматирование
-            Console.WriteLine(String.Format("{0} {2} {1} ", last_name, first_name, age));
-            // Интерполяция 
-            Console.WriteLine($"{last_name} {first_name} {age} ");
-            
+            //Console.WriteLine(delimiter2);  
+            #endregion
+#if NUMERIC_TYPES
+
+            //Console.Write($"Переменая типа 'Single' занимает {sizeof(Single)} байта");
+            //Console.WriteLine($" и принимает значения в диапозоне: {Single.MinValue} ... {Single.MaxValue}");
+            //Console.WriteLine(delimiter1);
+            //Console.Write($"Переменая типа 'double' занимает {sizeof(double)} байта");
+            //Console.WriteLine($" и принимает значения в диапозоне: {double.MinValue} ... {double.MaxValue}");
+            //Console.WriteLine(delimiter1);
+            //Console.Write($"Переменая типа 'decimal' занимает {sizeof(decimal)} байта");
+            //Console.WriteLine($"Диапозон принимаемых значений 'Int16': {decimal.MinValue} ... {decimal.MaxValue}");
+
+#endif
+            #region GetType_
+            //Console.WriteLine(123.GetType());   // int
+            //Console.WriteLine(123.4.GetType()); // double1
+            //Console.WriteLine(123f.GetType());  // float
+            //Console.WriteLine(123m.GetType());  // decimal
+            //Console.WriteLine('-'.GetType());   // char
+            //Console.WriteLine("few".GetType()); // string
+            //Console.WriteLine(((byte)5).GetType()); // преобразование
+            //C-like notation: (type)value;
+            #endregion
+            #region Exp
+            //int a = int.MaxValue;
+            //uint b = uint.MaxValue;
+            //Console.WriteLine(a);
+            //Console.WriteLine(b);
+            //long c = long.MaxValue;
+            //Console.WriteLine(b + c);
+            //Console.WriteLine((b + c).GetType());
+            #endregion
+            #region Factorial
+            //try
+            //{
+            //    int a = int.Parse(Console.ReadLine());
+            //    BigInteger f = 1;
+            //    for (int i = 1; i <= a; i++)
+            //    {
+            //        f *= i;
+            //        Console.WriteLine($"{i}! = {f}");
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex);
+            //}
+            #endregion
+
 
         }
     }
