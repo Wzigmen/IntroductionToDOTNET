@@ -11,8 +11,25 @@ using System.Text.RegularExpressions;
 
 namespace Домашняя_работа_СS
 {
+    class Point
+    {
+        private int x { get; set; }
+        private int y { get; set; }
+
+        public Point(int x = 0, int y = 0) 
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public void print()
+        {
+            Console.WriteLine($"x = {x}\ty = {y}");
+        }
+    }
     internal class Domashki
     {
+
         static readonly string delimiter2 = "\n==========================================\n";
         static void Main(string[] args)
         {
@@ -46,7 +63,6 @@ namespace Домашняя_работа_СS
 
             }  
 #endif
-
 #if false // Calculate
             while (true)
             {
@@ -84,6 +100,10 @@ namespace Домашняя_работа_СS
             Console.WriteLine($"Array {STRING1.ToString()}:\t sum - \t\t min {STRING1.Min()}\t max {STRING1.Max()}");
             Console.WriteLine(delimiter2); 
 #endif
+            Point point1 = new Point(2,3);
+            Point point2 = new Point();
+            point1.print();
+            point2.print();
 
         }
         //public static T sum<T>(T[] args) 
@@ -103,21 +123,6 @@ namespace Домашняя_работа_СS
                 Console.Write(index[i] + " ");
             }
             Console.WriteLine("\n");
-        }
-        public static int Clamp(int value, int min, int max)
-        {
-            if (value < min)
-            {
-                return min;
-            }
-            else if (value > max)
-            {
-                return max;
-            }
-            else
-            {
-                return value;
-            }
         }
         static double Calculate(double num1, string operation, double num2)
         {
