@@ -26,10 +26,15 @@ namespace Домашняя_работа_СS
         {
             Console.WriteLine($"x = {x}\ty = {y}");
         }
+        public double Distance(Point other)
+        {
+            double x_1 = x - other.x;
+            double y_1 = y - other.y;
+            return Math.Sqrt(x_1 * x_1 + y_1 * y_1);
+        }
     }
     internal class Domashki
     {
-
         static readonly string delimiter2 = "\n==========================================\n";
         static void Main(string[] args)
         {
@@ -101,10 +106,10 @@ namespace Домашняя_работа_СS
             Console.WriteLine(delimiter2); 
 #endif
             Point point1 = new Point(2,3);
-            Point point2 = new Point();
+            Point point2 = new Point(3,4);
             point1.print();
             point2.print();
-
+            Console.WriteLine(point1.Distance(point2));
 
         }
         //public static T sum<T>(T[] args) 
