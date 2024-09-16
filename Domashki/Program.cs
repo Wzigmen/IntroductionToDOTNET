@@ -105,6 +105,7 @@ namespace Домашняя_работа_СS
             point1.print();
             point2.print();
 
+
         }
         //public static T sum<T>(T[] args) 
         //{
