@@ -1,38 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using static System.Console;
 using System.IO;
-using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
+using Fractions;
+using Points;
 
 namespace Домашняя_работа_СS
 {
-    class Point
-    {
-        private int x { get; set; }
-        private int y { get; set; }
-
-        public Point(int x = 0, int y = 0) 
-        {
-            this.x = x;
-            this.y = y;
-        }
-
-        public void print()
-        {
-            Console.WriteLine($"x = {x}\ty = {y}");
-        }
-        public double Distance(Point other)
-        {
-            double x_1 = x - other.x;
-            double y_1 = y - other.y;
-            return Math.Sqrt(x_1 * x_1 + y_1 * y_1);
-        }
-    }
     internal class Domashki
     {
         static readonly string delimiter2 = "\n==========================================\n";
@@ -105,11 +80,22 @@ namespace Домашняя_работа_СS
             Console.WriteLine($"Array {STRING1.ToString()}:\t sum - \t\t min {STRING1.Min()}\t max {STRING1.Max()}");
             Console.WriteLine(delimiter2); 
 #endif
-            Point point1 = new Point(2,3);
-            Point point2 = new Point(3,4);
+#if false // Point
+            Point point1 = new Point(2, 3);
+            Point point2 = new Point(3, 4);
             point1.print();
             point2.print();
             Console.WriteLine(point1.Distance(point2));
+            Point D = new Point(point2);
+            Point C = new Point(D + point2);
+            C.print();
+            for (Point i = new Point(); i.x < 10; ++i)
+            {
+                i.print();
+            }
+#endif
+            Fraction A = new Fraction(2,3,4);
+            A.Print();
 
         }
         //public static T sum<T>(T[] args) 
