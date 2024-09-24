@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domashki", "Domashki\Domash
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAME", "GAME\GAME.csproj", "{00BB0FCD-FD56-4AA2-8C11-42F04985E479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy", "Academy\Academy.csproj", "{45D30254-EFE3-41AD-A400-D6C1460A5959}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractBaseClass", "AbstractBaseClass\AbstractBaseClass.csproj", "{F5228A7B-F340-4632-BBF1-ACA30C610DA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{00BB0FCD-FD56-4AA2-8C11-42F04985E479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00BB0FCD-FD56-4AA2-8C11-42F04985E479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00BB0FCD-FD56-4AA2-8C11-42F04985E479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45D30254-EFE3-41AD-A400-D6C1460A5959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45D30254-EFE3-41AD-A400-D6C1460A5959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45D30254-EFE3-41AD-A400-D6C1460A5959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45D30254-EFE3-41AD-A400-D6C1460A5959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5228A7B-F340-4632-BBF1-ACA30C610DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5228A7B-F340-4632-BBF1-ACA30C610DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5228A7B-F340-4632-BBF1-ACA30C610DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5228A7B-F340-4632-BBF1-ACA30C610DA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

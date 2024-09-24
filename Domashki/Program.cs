@@ -1,10 +1,11 @@
-﻿using System;
+﻿//#define INHERITENCE_1
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static System.Console;
 using System.IO;
-using Fractions;
 using Points;
+using Domashki;
 
 namespace Домашняя_работа_СS
 {
@@ -94,19 +95,22 @@ namespace Домашняя_работа_СS
                 i.print();
             }
 #endif
-            Fraction A = new Fraction(2,3,4);
+#if false // Fraction
+            Fraction A = new Fraction(1, 1, 2);
+            Fraction B = new Fraction(2, 2, 4);
             A.Print();
+            B.Print();
+            Console.WriteLine(delimiter2);
+            Fraction multiplication = A * B;
+            Fraction addition = A - B;
+            multiplication.Print();
+            addition.Print();
+            --multiplication;
+            multiplication.Print();
+            A += B; 
+#endif
 
         }
-        //public static T sum<T>(T[] args) 
-        //{
-        //    T sum = args[0];
-        //    for (int i = 1; i < args.Length; i++)
-        //    {
-        //        sum += args[i];
-        //    }
-        //    return sum;
-        //}
         public static void print<T>(T[] index)
         {
             Console.WriteLine( "Arrays " + index.ToString());
