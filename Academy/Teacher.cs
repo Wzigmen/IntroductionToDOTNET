@@ -31,7 +31,7 @@ namespace Domashki
         }
         public override string ToString()
         {
-            return base.ToString() + $" {Speciality} {Experience}";
+            return base.ToString() + $"\t{Speciality}\t{Experience}";
         }
     }
 }

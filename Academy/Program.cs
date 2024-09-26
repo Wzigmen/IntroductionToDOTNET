@@ -2,6 +2,7 @@
 //#define INHERITENCE_2
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,14 +39,34 @@ namespace Academy
             Teacher teacher_ricardo = new Teacher(ricardo, "Weapons", 20);
             Console.WriteLine(teacher_ricardo); 
 #endif
+            Student mark = new Student("Mark", "Cukin", 35, "Doctor", "Master" , 32.3, 8);
             Human[] group = new Human[]
-                {
-                     new Student("Factor", "Tommy", 22, "Thefr", "Vice", 95, 98),
-                     new Human("Jojo", "Ricardo", 42),
-                     new Teacher("Lolic", "Rico", 36, "Weapons", 20)
-                };
+            {
+                 new Student("Factor", "Tommy", 22, "Traktorist", "Vice", 95, 98),
+                 new Human("Jojo", "Ricardo", 42),
+                 new Teacher("Lolic", "Rico", 36, "Tualetchik", 20),
+                 new Graduate (mark, "Shalun")
+            };
 
+            foreach (Human human in group)
+            {
+                Console.WriteLine(human);
+            }
+            // файл
+            string file = "FILE.txt";
+            StreamWriter gruppa_invalidov = new StreamWriter(file);
 
+            foreach (var item in group) // запись в файл
+            {
+                gruppa_invalidov.WriteLine(item);
+            }
+            gruppa_invalidov.Close();
+            string[] strings = File.ReadAllLines(file);
+            foreach (var item in strings) // вывод с файла
+            {
+                Console.WriteLine(item);
+            }
+            gruppa_invalidov.Close();
         }
     }
 }

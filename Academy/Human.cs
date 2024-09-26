@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Domashki
 {
@@ -29,9 +30,9 @@ namespace Domashki
         {
             Console.WriteLine($"HDestructor:\t{GetHashCode()}");
         }
-        public override string ToString() 
+        public override string ToString()
         {
-            return base.ToString()+$"\t{LastName} {FirstName} {Age} y/o";
+            return $"{LastName}\t{FirstName}\t{Age} y/o";
         }
     }
 }

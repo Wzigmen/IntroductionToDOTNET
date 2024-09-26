@@ -24,7 +24,7 @@ namespace Domashki
             Attendance = attendance;
             Console.WriteLine($"SConstructor:\t{GetHashCode()}");
         }
-        public Student(Human human, string speciality, string group, double rating, double attendance) : base(human)
+        public Student(Human human, string speciality, string group, double rating, double attendance) : base(human) // Constructor
         {
             Speciality= speciality;
             Group = group;
@@ -33,7 +33,7 @@ namespace Domashki
             Console.WriteLine($"SConstructor:\t{GetHashCode()}");
         }
 
-        public Student(Student student):base(student) // CopyConstructor
+        public Student(Student student) : base(student) // CopyConstructor
         {
             this.Speciality = student.Speciality;
             this.Group = student.Group;
@@ -41,13 +41,14 @@ namespace Domashki
             this.Attendance = student.Attendance;
             Console.WriteLine($"SCopyConstructor:\t{GetHashCode()}");
         }
+
         ~Student() 
         {
             Console.WriteLine($"SDestructor:\t{GetHashCode()}");
         }
         public override string ToString()
         {
-            return base.ToString() + $" {Speciality} {Group} {Rating} {Attendance}";
+            return base.ToString() + $" \t{Speciality}\t{Group}\t{Rating}\t{Attendance}";
         }
     }
 }
